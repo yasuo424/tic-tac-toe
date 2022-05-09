@@ -1,17 +1,15 @@
 import { useState } from 'react'
 import './App.css'
+import { Board } from './components/Board'
 
 export const App = () => {
-  const [count, setCount] = useState(0)
+  const squares = [null, null, null, null, null, null, null, null, null];
+  const status = "next player is X"
 
   return (
     <div className="App">
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
+      <p>{status}</p>
+      <Board squares={squares} />
     </div>
-  )
+  );
 }
