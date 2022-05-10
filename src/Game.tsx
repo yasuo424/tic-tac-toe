@@ -1,8 +1,18 @@
 import { useState } from 'react'
-import './App.css'
+import './Game.css'
 import { Board } from './components/Board'
 
-export const App = () => {
+export const Game = () => {
+  const [state, setState] = useState<GameState>({
+    history: [
+      {
+        squares: [null, null, null, null, null, null, null, null, null],
+        xIsNext: true,
+      },
+    ],
+    stepNumber: 0,
+  });
+
   const squares = [null, null, null, null, null, null, null, null, null];
   const status = "next player is X"
 
